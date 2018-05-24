@@ -1,0 +1,9 @@
+# Playbook to execute a powershell script on hosts
+
+- name: Run powershell script
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: Run powershell script
+     script: playbooks/test.ps1
+

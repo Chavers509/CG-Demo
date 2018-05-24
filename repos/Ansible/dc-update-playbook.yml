@@ -1,0 +1,13 @@
+---
+# Install all security, critical, and rollup updates
+
+#- name: win_updates
+#  hosts: GAWDS
+#
+#  task:  
+#-name: Update
+- name win_updates:
+     category_names:
+       - SecurityUpdates
+       - CriticalUpdates
+       - UpdateRollups

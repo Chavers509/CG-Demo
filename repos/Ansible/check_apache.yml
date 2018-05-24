@@ -1,0 +1,10 @@
+---
+
+- name: Ensure the httpd service is running
+  hosts: irc
+
+  service:
+    name: httpd
+    state: started
+    become: true
+

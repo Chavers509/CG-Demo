@@ -1,0 +1,46 @@
+---
+#
+# This playbook is a Debian Linux only playground playbook for GAWDS (c)2017
+#
+- name: Ping 
+  hosts: deb
+
+  tasks:
+  - name: ping
+    ping:
+
+- name: Date
+  hosts: deb
+
+  tasks:
+  - shell: /bin/date
+
+- name: Update Packages on all Debian Hosts
+  hosts: deb
+
+  tasks:
+  - apt: 
+     update_cache: yes
+
+#  - apt: 
+#    name: "*"
+#    state: present
+
+#  - apt:
+#     upgrade: yes
+
+  - apt:
+     upgrade: dist
+
+#- name: AutoRemove
+#  hosts: deb
+#  
+#  tasks:
+#  - name: AutoRemove 
+#     command: apt-get -y autoremove
+#     register: autoremove_output
+#     changed_when: "'The following packages will be REMOVED' in autoremove_output.stdout"
+#
+#- name: Autoremove unused packages
+#      autoremove: yes
+

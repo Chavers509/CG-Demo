@@ -1,0 +1,15 @@
+---
+#
+#This script starts the unreal IRCD and services for each GAwDS.NET IRC node
+#
+- name: ReStart Unreal ircd on all GAwDS.NET nodes
+  hosts: irc
+#  remote_user: = chavers
+#      become: true
+#      become_user: chavers
+#      become_method: su    
+  tasks:
+  - shell: /home/chavers/Unreal3.2.10.5/unreal restart
+  - shell: /home/chavers/services/bin/services
+
+
